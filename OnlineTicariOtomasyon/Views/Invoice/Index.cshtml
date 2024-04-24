@@ -1,0 +1,61 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Faturalar</h2>
+<table form id="tbl1" class="table table-bordered" style="margin-top:20px;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Order No</th>
+            <th>Seri No</th>
+            <th>Fatura Tarihi</th>
+            <th>Vergi Dairesi</th>
+           
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Toplam</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.InvoiceId</td>
+                <td>@i.OrderNo</td>
+                <td>@i.SerialNo</td>
+                <td>@i.InvoiceDate</td>
+                <td>@i.TaxAdministration</td>
+             
+                <td>@i.Deliverer</td>
+                <td>@i.Receiver</td>
+                <td>@i.SumInvoice</td>
+                <td><a href="/Invoice/BringInvoice/@i.InvoiceId" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Invoice/InvoiceItems/@i.InvoiceId" class="btn btn-warning">Detaylar</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/Invoice/AddInvoice/" class="btn btn-primary">Yeni Fatura</a>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>

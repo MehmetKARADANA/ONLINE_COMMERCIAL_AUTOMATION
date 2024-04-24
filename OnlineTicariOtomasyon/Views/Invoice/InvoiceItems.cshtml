@@ -1,0 +1,70 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<InvoiceItem>
+@{
+    ViewBag.Title = "InvoiceItems";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+
+<h2>Fatura Detay</h2>
+<table form id="tbl1" class="table table-bordered" style="margin-top:20px;">
+    <thead>
+        <tr>
+            <th>Kalem Id</th>
+            <th>Order No</th>
+            <th>Seri No</th>
+            <th>Fatura Tarihi</th>
+            <th>Vergi Dairesi</th>
+
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Toplam</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@ViewBag.invoice.InvoiceId</td>
+            <td>@ViewBag.invoice.OrderNo</td>
+            <td>@ViewBag.invoice.SerialNo</td>
+            <td>@ViewBag.invoice.InvoiceDate</td>
+            <td>@ViewBag.invoice.TaxAdministration</td>
+
+            <td>@ViewBag.invoice.Deliverer</td>
+            <td>@ViewBag.invoice.Receiver</td>
+            <td>@ViewBag.invoice.SumInvoice</td>
+        </tr>
+    </tbody>
+
+</table>
+<br />
+<h4>Kalemler</h4>
+<table form id="tbl2" class="table table-bordered" style="margin-top:20px;">
+    <thead>
+        <tr>
+            <th>Item Id</th>
+            <th>Açıklama</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Toplam Fiyat</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var im in Model)
+        {
+            <tr>
+                <td>@im.InvoiceItemId</td>
+                <td>@im.Explanation</td>
+                <td>@im.Amount</td>
+                <td>@im.UnitPrice</td>
+                <td>@im.SumItemPrice</td>
+                <td><a href="/Invoice/BringInvoiceItem/@im.InvoiceItemId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/Invoice/AddInvoiceItem/@ViewBag.invoice.InvoiceId" class="btn btn-primary">Kalem Ekle</a>
+@*item ekleme kodunu yaz invoicecontollera ekleme kodunu yaz buradan viewbag ile fatura id post nesnesi olarakta 
+kalemi yolla güncelleme kodunua yaz ve fatura toplam kodunu yazdır*@

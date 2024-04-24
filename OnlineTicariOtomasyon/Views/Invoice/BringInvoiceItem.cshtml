@@ -1,0 +1,30 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model InvoiceItem
+@{
+    ViewBag.Title = "BringInvoiceItem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Kalem Güncelleme</h2>
+@using (Html.BeginForm("UpdateItem","Invoice", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.InvoiceItemId)
+    @Html.TextBoxFor(x => x.InvoiceItemId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Explanation)
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UnitPrice)
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.InvoiceId)
+    @Html.TextBoxFor(x => x.InvoiceId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+}
+
+

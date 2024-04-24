@@ -1,0 +1,26 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Sale
+@{
+    ViewBag.Title = "AddSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Satış Ekle</h2>
+<form class="form-group" method="post">
+    Ürün
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.values1, new { @class = "form-control" })
+    <br />
+    Cari
+    @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control" })
+    <br />
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.values3, new { @class = "form-control" })
+    <br />
+    Tutar
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    Adet
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

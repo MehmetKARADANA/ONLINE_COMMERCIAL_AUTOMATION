@@ -1,0 +1,32 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Employee
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Personel Ekle</h2>
+
+<form class="form-group" method="post">
+    
+    Personel Ad
+    @Html.TextBoxFor(x => x.EmployeName, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.CurrentSurname)*@
+    <br />
+    @*@Html.LabelFor(x => x.EmployeSurname)*@
+    Personel Soyadı
+    @Html.TextBoxFor(x => x.EmployeSurname, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.CurrentSurname)*@
+    <br />
+    Görsel
+    @*@Html.LabelFor(x => x.EmployeImage)*@
+    @Html.TextBoxFor(x => x.EmployeImage, new { @class = "form-control" })
+    <br />
+    Departman
+    @*@Html.LabelFor(x => x.Department)*@
+    @Html.DropDownListFor(x => x.DepartmentId,(List<SelectListItem>)ViewBag.values1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+</form>

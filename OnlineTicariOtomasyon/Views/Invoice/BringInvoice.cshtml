@@ -1,0 +1,36 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Invoice
+@{
+    ViewBag.Title = "BringInvoice";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("UpdateInvoice", "Invoice", FormMethod.Post))
+{@Html.LabelFor(x => x.InvoiceId)
+@Html.TextBoxFor(x => x.InvoiceId, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.InvoiceId, "")
+<br />
+@Html.LabelFor(x => x.OrderNo)
+@Html.TextBoxFor(x => x.OrderNo, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.OrderNo, "")
+<br />
+@Html.LabelFor(x => x.SerialNo)
+@Html.TextBoxFor(x => x.SerialNo, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.SerialNo, "")
+<br />
+@Html.LabelFor(x => x.TaxAdministration)
+@Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.InvoiceDate)
+@Html.TextBoxFor(x => x.InvoiceDate, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.InvoiceDate, "")
+    <br />
+@Html.LabelFor(x => x.Deliverer)
+@Html.TextBoxFor(x => x.Deliverer, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Receiver)
+@Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+<br />
+<button class="btn btn-success">Güncelle</button>
+}
+

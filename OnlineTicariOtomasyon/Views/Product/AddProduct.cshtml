@@ -1,0 +1,38 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Ürün Ekle</h2>
+<form class=" form-group" method="post">
+    Ürün Adı
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+    <br />
+    Marka
+    @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+    <br />
+    Stok
+    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+    <br />
+    Alış Fiyatı
+    @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control" })
+    <br />
+    Satış Fiyatı
+    @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
+    <br />
+    @*Durum*@
+    @*<label> Kategori Aktif olsun mu?</label> 
+    @Html.CheckBoxFor(x => x.State, new { @class = "form-control" })
+    <br />*@
+    Görsel
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    Kategori
+    @*@Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

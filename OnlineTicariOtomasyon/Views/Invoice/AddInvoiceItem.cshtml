@@ -1,0 +1,26 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model InvoiceItem
+@{
+    ViewBag.Title = "AddInvoiceItem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>@Model.InvoiceId Id'li Faturaya Kalem Ekleme</h2>
+<form class="form-group" method="post">
+    Açıklama
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    Adet
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    Adet Fiyatı
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    Fatura Id
+    @Html.TextBoxFor(x => x.InvoiceId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+
+
+

@@ -1,0 +1,31 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Sale
+@{
+    ViewBag.Title = "BringSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Satış Güncelle</h2>
+@using (Html.BeginForm("UpdateSale", "Sales", FormMethod.Post))
+{
+    
+    @Html.LabelFor(x => x.SalesId)
+    @Html.TextBoxFor(x => x.SalesId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <label>Ürün</label>
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.values1, new { @class = "form-control" })
+    <br />
+    <label>Cari</label>
+    @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control" })
+    <br />
+    <label>Personel</label>
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.values3, new { @class = "form-control" })
+    <br />
+    <label>Tutar</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    <label>Adet</label>
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}

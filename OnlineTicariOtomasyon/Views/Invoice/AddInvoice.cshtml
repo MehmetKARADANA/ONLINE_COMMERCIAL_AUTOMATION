@@ -1,0 +1,28 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Invoice
+@{
+    ViewBag.Title = "AddInvoice";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Fatura</h2>
+<form class="form-group" method="post">
+    Order No
+    @Html.TextBoxFor(x => x.OrderNo, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OrderNo, "")
+    <br />
+    Seri No
+    @Html.TextBoxFor(x => x.SerialNo, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SerialNo, "")
+    <br />
+    Vergi Dairesi
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    <br />
+    Teslim Eden
+    @Html.TextBoxFor(x => x.Deliverer, new { @class = "form-control" })
+    <br />
+    Teslim Alan
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>

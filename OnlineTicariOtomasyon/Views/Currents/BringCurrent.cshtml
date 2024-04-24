@@ -1,0 +1,34 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Current
+@{
+    ViewBag.Title = "BringCurrent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Güncelleme</h2>
+@using (Html.BeginForm("UpdateCurrent", "Currents", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.CurrentId)
+    @Html.TextBoxFor(x => x.CurrentId, new { @class = "form-control", @readonly = "reaonly" })
+    <br />
+    @Html.LabelFor(x => x.CurrentName)
+    @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentName);
+    <br />
+    @Html.LabelFor(x => x.CurrentSurname)
+    @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CurrentSurname);
+    <br />
+    @Html.LabelFor(x => x.CurrentCity)
+    @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.CurrentMail)
+    @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Güncelle</button>
+
+}
+

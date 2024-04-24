@@ -1,0 +1,33 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Employee
+@{
+    ViewBag.Title = "BringEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Personel Güncelle</h2>
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+{ 
+    @Html.LabelFor(x=>x.EmployeeId)
+    @Html.TextBoxFor(x=>x.EmployeeId, new { @class = "form-control" ,@readonly="readonly" })
+    <br />
+ @Html.LabelFor(x=>x.EmployeName)
+ @Html.TextBoxFor(x => x.EmployeName, new { @class = "form-control" })
+@*@Html.ValidationMessageFor(x => x.CurrentSurname)*@
+<br />
+@Html.LabelFor(x => x.EmployeSurname)
+@Html.TextBoxFor(x => x.EmployeSurname, new { @class = "form-control" })
+@*@Html.ValidationMessageFor(x => x.CurrentSurname)*@
+<br />
+
+@Html.LabelFor(x => x.EmployeImage)
+@Html.TextBoxFor(x => x.EmployeImage, new { @class = "form-control" })
+<br />
+
+@Html.LabelFor(x => x.Department)
+@Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.values1, new { @class = "form-control" })
+<br />
+
+<button class="btn btn-info">Kaydet</button>
+            }
+
