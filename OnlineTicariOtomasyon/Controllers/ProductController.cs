@@ -77,5 +77,7 @@ namespace OnlineTicariOtomasyon.Controllers
             return View(products); 
         }
 
+      
+
     }
 }
