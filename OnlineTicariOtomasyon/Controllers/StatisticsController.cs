@@ -79,6 +79,18 @@ namespace OnlineTicariOtomasyon.Controllers
             return View();
         }
 
+        public ActionResult SimpleTables() {
+
+            var query1 = from x in context.Products.Where(x=>x.State==true)
+                         group x by x.Category.CategoryName into c
+                         select new Group
+                         {
+                             Number = c.Count(),
+                             Name = c.Key
+                         };
+            
+            return View(query1.ToList()); }
+
 
     }
 }

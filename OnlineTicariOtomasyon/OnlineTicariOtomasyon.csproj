@@ -150,6 +150,7 @@
     <Compile Include="Models\Classes\Department.cs" />
     <Compile Include="Models\Classes\Employee.cs" />
     <Compile Include="Models\Classes\Expense.cs" />
+    <Compile Include="Models\Classes\Group.cs" />
     <Compile Include="Models\Classes\Invoice.cs" />
     <Compile Include="Models\Classes\InvoiceItem.cs" />
     <Compile Include="Models\Classes\Product.cs" />
@@ -2853,6 +2854,7 @@
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
+    <Content Include="Views\Statistics\SimpleTables.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
