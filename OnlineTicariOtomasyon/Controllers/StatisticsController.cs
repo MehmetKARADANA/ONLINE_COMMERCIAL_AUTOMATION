@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.Mvc;
 
@@ -81,16 +82,67 @@ namespace OnlineTicariOtomasyon.Controllers
 
         public ActionResult SimpleTables() {
 
-            var query1 = from x in context.Products.Where(x=>x.State==true)
+            //var query1 = from x in context.Products.Where(x=>x.State==true)
+            //             group x by x.Category.CategoryName into c
+            //             select new Group
+            //             {
+            //                 Number = c.Count(),
+            //                 Name = c.Key
+            //             };
+            
+            return View(); }
+
+        public PartialViewResult partial1()
+        {
+
+            var query1 = from x in context.Products.Where(x => x.State == true)
                          group x by x.Category.CategoryName into c
+                         orderby c.Count() descending
                          select new Group
                          {
                              Number = c.Count(),
                              Name = c.Key
                          };
-            
-            return View(query1.ToList()); }
+            return PartialView(query1.ToList());
+        }
 
+        public PartialViewResult partial2()
+        {
+            var query = from y in context.Currents
+                        group y by  y.CurrentCity into c
+                        orderby c.Count() descending
+                        select new Group
+                        {
+                            Number = c.Count(),
+                            Name = c.Key
+                        };
+            return PartialView(query.ToList());
+        }
+         
+        public PartialViewResult partial3 ()
+        {
+            var query = from z in context.Employees
+                        group z by z.Department.DepartmentName into c
+                        orderby c.Count() descending
+                        select new Group
+                        {
+                            Number = c.Count(),
+                            Name = c.Key
+                        };
+            return PartialView(query.ToList());
+        }
 
+        public PartialViewResult partial4 ()
+        {
+            var query = from a in context.Products
+                        group a by a.Brand into c
+                        orderby c.Count() descending
+                        select new Group
+                        {
+                            Name = c.Key,
+                            Number = c.Count(),
+                        };
+            return PartialView(query.ToList());
+        }
     }
 }
