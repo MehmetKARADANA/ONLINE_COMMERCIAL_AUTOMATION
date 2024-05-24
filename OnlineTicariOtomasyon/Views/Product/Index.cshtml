@@ -30,7 +30,9 @@
     <td>@prd.PurchasePrice</td>
     <td>@prd.SalePrice</td>
     <td>@prd.Category.CategoryName</td>
-    <td>@prd.Image</td>
+    <td>
+        <img src="@prd.Image" style="width:100px; height:100px;"/>
+    </td>
     <td><a href="/Product/RemoveProduct/@prd.ProductId" class="btn btn-danger">Sil</a></td>
     <td><a href="/Product/BringProduct/@prd.ProductId" class="btn btn-success">Güncelle</a></td>
 </tr>

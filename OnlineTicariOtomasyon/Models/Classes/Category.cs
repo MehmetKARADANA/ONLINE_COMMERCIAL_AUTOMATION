@@ -9,9 +9,11 @@ namespace OnlineTicariOtomasyon.Models.Classes
 {
     public class Category
     {
+        [Display(Name = "ID")]
         [Key]
         public int CategoryId { get; set; }
 
+        [Display(Name = "Kategori Adı")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string CategoryName { get; set; }

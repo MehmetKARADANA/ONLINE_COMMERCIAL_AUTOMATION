@@ -9,21 +9,28 @@ namespace OnlineTicariOtomasyon.Models.Classes
 {
     public class Product
     {
+        [Display(Name ="Urun Id")]   
         [Key]
         public   int ProductId {  get; set; }
 
+        [Display(Name = "Name")]
         [Column(TypeName ="Varchar")]
         [StringLength(30)]
         public string ProductName { get; set; }
 
+        [Display(Name = "Marka")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Brand { get; set; }
+        [Display(Name = "Stok")]
         public short Stock {  get; set; }
+        [Display(Name = "Alış Fiyatı")]
         public decimal PurchasePrice {  get; set; }
+        [Display(Name = "Satış Fiyatı")]
         public decimal SalePrice {  get; set; }
         public bool State {  get; set; }
 
+        [Display(Name = "Görsel")]
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string Image {  get; set; }

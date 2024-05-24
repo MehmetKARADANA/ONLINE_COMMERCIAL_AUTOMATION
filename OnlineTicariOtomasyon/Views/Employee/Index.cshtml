@@ -23,7 +23,7 @@
             <td>@e.EmployeeId</td>
             <td>@e.EmployeName</td>
             <td>@e.EmployeSurname</td>
-            <td>@e.EmployeImage</td>
+            <td><img src="@e.EmployeImage" style="width:100px; height:100px;" /></td>
             <td>@e.Department.DepartmentName</td>
             <td><a href="/Employee/BringEmployee/@e.EmployeeId" class="btn btn-success">Güncelle</a></td>
             <td><a href="/Departman/SalesDepartmentEmploye/@e.EmployeeId" class="btn btn-info">Satış Geçmişi</a></td>
