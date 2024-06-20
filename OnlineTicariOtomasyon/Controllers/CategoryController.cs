@@ -10,7 +10,9 @@ namespace OnlineTicariOtomasyon.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
+
         Context context= new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var categoryies = context.Categories.ToList();
