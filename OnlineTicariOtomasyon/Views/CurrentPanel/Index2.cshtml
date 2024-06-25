@@ -1,0 +1,52 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model Current
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+<br />
+<h2>
+    Cari Bilgi Güncelleme Paneli
+</h2>
+@using (Html.BeginForm("UpdateCurrent", "CurrentPanel", FormMethod.Post))
+{
+    <table class="table table-hover">
+       <tr>
+           <td>
+               <label>
+                   Mail: @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control",@readonly="readonly" })
+               </label>
+           </td>
+       </tr>
+        <tr>
+            <td>
+                <label>
+                    Ad: @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control"})
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    Soyad: @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    Şehir: @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    Şifre: @Html.TextBoxFor(x => x.CurrrentPassword, new { @class = "form-control" })
+                </label>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-danger">Kaydet</button>
+}
+

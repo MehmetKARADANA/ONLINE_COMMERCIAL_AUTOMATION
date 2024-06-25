@@ -1,8 +1,46 @@
 ﻿
+@using OnlineTicariOtomasyon.Models.Classes
+@model Current
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
 }
-
-<h2>Index</h2>
-
+<br />
+<h2>
+    Cari Bilgi Paneli
+</h2>
+<table class="table table-hover">
+    <tr>
+        <td><label>Mail Adresi: @User.Identity.Name</label></td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                Ad: @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control", @readonly = "readonly" })
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                Soyad: @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control", @readonly = "readonly" })
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                Şehir: @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control", @readonly = "readonly" })
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                Şifre: @Html.TextBoxFor(x => x.CurrrentPassword, new { @class = "form-control", @readonly = "readonly" })
+            </label>
+        </td>
+    </tr>
+</table>
+@*<a href="/CurrentPanel/Index2/@UrlEncoder.Default.Encode(Model.CurrentMail.ToString())" class="btn btn-danger">Bilgilerimi Güncelle</a>*@
+<a href="/CurrentPanel/Index2/@Model.CurrentId" class="btn btn-danger">Bilgilerimi Güncelle</a>
